@@ -1,4 +1,4 @@
-import { NoBookingsForUser, NoSpaceOnRoom, UseralreadyHasBooking, notFoundError } from '@/errors';
+import { NoBookingsForUser, NoBookingsForUsertoChange, NoSpaceOnRoom, UseralreadyHasBooking, notFoundError } from '@/errors';
 import { bookingByid, createBooking, deleteBooking, disponibilityByRoomId } from '@/repositories';
 
 export async function getBookingbyuserId(userId: number) {
@@ -27,9 +27,11 @@ export async function postBookingWithRoomId(roomId: number, userId: number) {
 
 export async function putBookingbyId(roomId: number, bookingId: number, userId: number) {
   const booking = await bookingByid(userId);
+
   if (!booking) {
-    throw NoBookingsForUser();
+    throw NoBookingsForUsertoChange();
   }
+
   if (bookingId !== booking.id) {
     throw NoSpaceOnRoom();
   }

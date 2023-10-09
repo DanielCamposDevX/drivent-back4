@@ -6,3 +6,12 @@ export function NoBookingsForUser(): ApplicationError {
     message: 'No bookings made by you',
   };
 }
+
+export function NoBookingsForUsertoChange(): ApplicationError {
+  return {
+    name: 'NoBookingsForUsertoChange',
+    message: 'No bookings made by you',
+  };
+}
+
+

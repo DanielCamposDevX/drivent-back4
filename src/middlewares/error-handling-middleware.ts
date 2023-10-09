@@ -64,6 +64,11 @@ export function handleApplicationErrors(
   if (err.name === 'NoBookingsForUser') {
     return res.status(httpStatus.NOT_FOUND).send(err.message);
   }
+
+  if (err.name === 'NoBookingsForUsertoChange') {
+    return res.status(httpStatus.FORBIDDEN).send(err.message);
+  }
+
   if (err.name === 'NoSpaceOnRoom') {
     return res.status(httpStatus.FORBIDDEN).send(err.message);
   }

@@ -5,6 +5,9 @@ export async function bookingByid(userId: number) {
         where: {
             userId,
         },
+        include:{
+            Room: true
+        }
     });
 }
 
