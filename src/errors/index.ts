@@ -12,3 +12,4 @@ export * from './invalid-cep-error';
 export * from './no-booking-for-user';
 export * from './no-space-available-in-room';
 export * from './user-already-has-booking';
+export * from './forbidden';

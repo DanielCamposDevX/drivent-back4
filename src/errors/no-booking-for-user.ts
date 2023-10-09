@@ -13,5 +13,3 @@ export function NoBookingsForUsertoChange(): ApplicationError {
     message: 'No bookings made by you',
   };
 }
-
-
